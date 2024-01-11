@@ -1,12 +1,13 @@
 package ch.hslu.msed.smarthome.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.UuidGenerator;
 
 import java.util.UUID;
 
@@ -16,27 +17,24 @@ import java.util.UUID;
 @ToString
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
+    @UuidGenerator
     private UUID id;
 
+    @NotNull
     private String firstName;
 
     private String lastName;
 
+    @NotNull
     private String email;
+
+    @OneToOne(mappedBy = "user")
+    private Home home;
 
     public User() {}
 
     public User(String firstName, String email) {
         this.firstName = firstName;
         this.email = email;
-    }
-
-    private void provideAddress() {
-        // TODO: add logic
-    }
-
-    private void changeAddress() {
-        // TODO: add logic
     }
 }

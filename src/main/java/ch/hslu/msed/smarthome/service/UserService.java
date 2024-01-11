@@ -46,4 +46,12 @@ public class UserService {
         final UUID uuid = UUID.fromString(id);
         userRepository.deleteById(uuid);
     }
+
+    private void provideAddress() {
+        // TODO: add logic
+    }
+
+    private void changeAddress() {
+        // TODO: add logic
+    }
 }
