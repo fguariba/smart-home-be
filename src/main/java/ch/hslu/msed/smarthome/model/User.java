@@ -1,5 +1,6 @@
 package ch.hslu.msed.smarthome.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -28,7 +29,7 @@ public class User {
     @NotNull
     private String email;
 
-    @OneToOne(mappedBy = "user")
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
     private Home home;
 
     public User() {}
