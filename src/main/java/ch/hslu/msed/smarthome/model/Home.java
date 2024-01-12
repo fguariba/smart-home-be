@@ -31,11 +31,13 @@ public class Home {
     @OneToMany(mappedBy = "home")
     private Set<Device> devices;
 
-    private String city;
+    private String postalCode;
 
-    private String state;
+    private String city;
 
     private String country;
 
-    private String street;
+    private double latitude;
+
+    private double longitude;
 }
