@@ -27,11 +27,10 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests( authReq -> authReq
+        http.authorizeHttpRequests(authReq -> authReq
                 .requestMatchers("/actuator/**").permitAll()
                 .requestMatchers("/swagger-ui/**").permitAll()
                 .requestMatchers("/v3/**").permitAll()
-                .requestMatchers("/h2-console/**").permitAll()
                 // TODO: improve security for registered users in system and admin users
                 .anyRequest().permitAll());
         return http.build();
