@@ -14,6 +14,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
+@DiscriminatorColumn(name = "type")
 @Getter
 @Setter
 @ToString
@@ -37,4 +38,6 @@ public abstract class Device {
     @ManyToOne
     @JoinColumn(name="home_id", nullable = false)
     private Home home;
+
+    protected Device() {}
 }

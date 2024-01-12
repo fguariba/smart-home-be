@@ -22,6 +22,7 @@ public class Home {
 
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
+    @NotNull
     private User user;
 
     @NotNull
@@ -40,4 +41,10 @@ public class Home {
     private double latitude;
 
     private double longitude;
+
+    public Home() {}
+
+    public Home(User user) {
+        this.user = user;
+    }
 }
