@@ -43,7 +43,7 @@ public class WebSecurityConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry corsRegistry) {
-                corsRegistry.addMapping("/**").allowedOrigins("http://localhost:8081");
+                corsRegistry.addMapping("/**").allowedOrigins("http://localhost:3000");
             }
         };
     }
