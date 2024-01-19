@@ -16,7 +16,7 @@ import lombok.ToString;
 public class DoorLight extends Device {
 
     public DoorLight(Home home) {
-       super.setHome(home);
+       super(home);
     }
 
     public DoorLight() {}

@@ -17,7 +17,7 @@ public final class WaterIrrigator extends Device {
     private double waterQuantity;
 
     public WaterIrrigator(Home home) {
-        super.setHome(home);
+        super(home);
     }
 
     public WaterIrrigator() {}
