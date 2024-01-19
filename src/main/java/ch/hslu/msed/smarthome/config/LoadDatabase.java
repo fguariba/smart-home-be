@@ -1,5 +1,6 @@
 package ch.hslu.msed.smarthome.config;
 
+import ch.hslu.msed.smarthome.model.Device;
 import ch.hslu.msed.smarthome.model.Home;
 import ch.hslu.msed.smarthome.model.User;
 import ch.hslu.msed.smarthome.model.devices.DoorLight;
@@ -33,9 +34,9 @@ public class LoadDatabase {
             log.info("Uxia's home: "+ homeRepo.save(uxiaHouse));
 
             log.info("Preloading devices...");
-            final var waterIrrigator = new WaterIrrigator(franciscoHouse);
-            final var doorLight = new DoorLight(franciscoHouse);
-            final var windowBlinders = new WindowBlinders(franciscoHouse);
+            final Device waterIrrigator = new WaterIrrigator(franciscoHouse);
+            final Device doorLight = new DoorLight(franciscoHouse);
+            final Device windowBlinders = new WindowBlinders(franciscoHouse);
             log.info("Francisco's water irrigator: "+ deviceRepo.save(waterIrrigator));
             log.info("Francisco's door light: "+ deviceRepo.save(doorLight));
             log.info("Francisco's window blinders: "+ deviceRepo.save(windowBlinders));

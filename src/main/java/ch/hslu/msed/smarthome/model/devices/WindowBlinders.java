@@ -17,7 +17,7 @@ public class WindowBlinders extends Device {
     private int angle;
 
     public WindowBlinders(Home home) {
-        super.setHome(home);
+        super(home);
     }
 
     public WindowBlinders() {}

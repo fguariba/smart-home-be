@@ -40,4 +40,8 @@ public abstract class Device {
     private Home home;
 
     protected Device() {}
+
+    protected Device(Home home) {
+        this.home = home;
+    }
 }

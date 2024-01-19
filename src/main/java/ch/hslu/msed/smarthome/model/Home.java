@@ -20,8 +20,7 @@ public class Home {
     @UuidGenerator
     private UUID id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @OneToOne(mappedBy = "home")
     @NotNull
     private User user;
 
