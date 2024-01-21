@@ -1,5 +1,6 @@
 package ch.hslu.msed.smarthome.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
@@ -22,6 +23,7 @@ public class Home {
 
     @OneToOne(mappedBy = "home")
     @NotNull
+    @JsonBackReference
     private User user;
 
     @NotNull
