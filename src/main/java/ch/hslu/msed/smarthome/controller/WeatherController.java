@@ -1,7 +1,7 @@
 package ch.hslu.msed.smarthome.controller;
 
 import ch.hslu.msed.smarthome.service.WeatherService;
-import ch.hslu.msed.smarthome.service.model.WeatherDataResponse;
+import ch.hslu.msed.smarthome.service.model.SmartHomeResponseData;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +17,7 @@ public class WeatherController {
     }
 
     @GetMapping
-    public WeatherDataResponse getCurrentWeather(@RequestParam double latitude, @RequestParam double longitude) {
+    public SmartHomeResponseData getCurrentWeather(@RequestParam double latitude, @RequestParam double longitude) {
         return weatherService.getCurrentWeather(latitude, longitude);
     }
 }
