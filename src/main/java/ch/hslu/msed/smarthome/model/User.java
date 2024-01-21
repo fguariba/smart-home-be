@@ -1,5 +1,6 @@
 package ch.hslu.msed.smarthome.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
@@ -28,6 +29,7 @@ public class User {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "home_id", referencedColumnName = "id")
+    @JsonManagedReference
     private Home home;
 
     public User() {}
