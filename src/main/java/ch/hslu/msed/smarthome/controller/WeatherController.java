@@ -18,6 +18,6 @@ public class WeatherController {
 
     @GetMapping
     public SmartHomeResponseData getCurrentWeather(@RequestParam double latitude, @RequestParam double longitude) {
-        return weatherService.getCurrentWeather(latitude, longitude);
+        return weatherService.buildSmartHomeResponse(latitude, longitude);
     }
 }
