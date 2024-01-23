@@ -2,6 +2,7 @@ package ch.hslu.msed.smarthome.controller;
 
 import ch.hslu.msed.smarthome.service.WeatherService;
 import ch.hslu.msed.smarthome.service.model.SmartHomeResponseData;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -17,7 +18,8 @@ public class WeatherController {
     }
 
     @GetMapping
-    public SmartHomeResponseData getCurrentWeather(@RequestParam double latitude, @RequestParam double longitude) {
-        return weatherService.buildSmartHomeResponse(latitude, longitude);
+    public ResponseEntity<SmartHomeResponseData> getCurrentWeather(@RequestParam double latitude, @RequestParam double longitude) {
+        final var response = weatherService.buildSmartHomeResponse(latitude, longitude);
+        return ResponseEntity.ok(response);
     }
 }

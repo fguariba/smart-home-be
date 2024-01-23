@@ -2,6 +2,8 @@ package ch.hslu.msed.smarthome.controller;
 
 import ch.hslu.msed.smarthome.model.User;
 import ch.hslu.msed.smarthome.service.UserService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,8 +23,8 @@ public class UserController {
     }
 
     @PostMapping
-    public User addNewUser(@RequestBody User user) {
-        return userService.add(user);
+    public ResponseEntity<User> addNewUser(@RequestBody User user) {
+        return new ResponseEntity<>(userService.add(user), HttpStatus.CREATED);
     }
 
     // Single item
