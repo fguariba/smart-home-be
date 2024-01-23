@@ -1,5 +1,6 @@
 package ch.hslu.msed.smarthome.service;
 
+import ch.hslu.msed.smarthome.service.model.WeatherResponse;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -14,6 +15,7 @@ class SmartHomeManagerServiceTest {
     void convertISO8601ToDate_successfully() {
         // arrange
         final String time = "2024-01-23T10:00";
+        //"2024-01-23T03:46"
 
         // act
         final LocalDateTime convertedTime = LocalDateTime.parse(time, DateTimeFormatter.ISO_DATE_TIME);
@@ -29,5 +31,11 @@ class SmartHomeManagerServiceTest {
 
         // act & assert
         assertThrows(DateTimeParseException.class, () -> LocalDateTime.parse(time, DateTimeFormatter.ISO_DATE_TIME));
+    }
+
+    @Test
+    void manageHomeDevices_successfully() {
+        final var weatherResponse = new WeatherResponse();
+
     }
 }

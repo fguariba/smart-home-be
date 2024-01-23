@@ -3,6 +3,7 @@ package ch.hslu.msed.smarthome.service.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
+import java.util.List;
 import java.util.Map;
 
 @Data
@@ -22,5 +23,5 @@ public class WeatherResponse {
     private Map<String, Object> current;
     @JsonProperty("daily_units")
     private Map<String, String> dailyUnits;
-    private Map<String, Object> daily;
+    private Map<String, List<Object>> daily;
 }
