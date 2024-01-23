@@ -2,6 +2,7 @@ package ch.hslu.msed.smarthome.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
@@ -25,6 +26,7 @@ public class User {
     private String lastName;
 
     @NotNull
+    @Email
     private String email;
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -37,5 +39,11 @@ public class User {
     public User(String firstName, String email) {
         this.firstName = firstName;
         this.email = email;
+    }
+
+    public User(String firstName, String email, Home home) {
+        this.firstName = firstName;
+        this.email = email;
+        this.home = home;
     }
 }

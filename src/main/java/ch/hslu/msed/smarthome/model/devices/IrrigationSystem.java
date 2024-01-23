@@ -9,18 +9,18 @@ import lombok.Setter;
 import lombok.ToString;
 
 @Entity
-@DiscriminatorValue("WATER_IRRIGATOR")
+@DiscriminatorValue("IRRIGATION_SYST")
 @Setter
 @Getter
 @ToString
-public final class WaterIrrigator extends Device {
+public final class IrrigationSystem extends Device {
     private double waterQuantity;
 
-    public WaterIrrigator(Home home) {
+    public IrrigationSystem(Home home) {
         super(home);
     }
 
-    public WaterIrrigator() {}
+    public IrrigationSystem() {}
 
     public void waterPlants() {
         // TODO: add logic

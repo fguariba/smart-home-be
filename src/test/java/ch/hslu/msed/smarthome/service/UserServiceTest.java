@@ -22,7 +22,7 @@ class UserServiceTest {
 
         // assert
         assertEquals(
-                "{\"id\":null,\"type\":null,\"devices\":null,\"postalCode\":null,\"city\":null,\"country\":null,\"latitude\":0.0,\"longitude\":0.0}",
+                "{\"id\":null,\"devices\":null,\"postalCode\":null,\"city\":null,\"country\":null,\"latitude\":0.0,\"longitude\":0.0}",
                 jsonValue);
     }
 }

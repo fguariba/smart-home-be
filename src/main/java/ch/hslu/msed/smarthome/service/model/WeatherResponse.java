@@ -2,10 +2,11 @@ package ch.hslu.msed.smarthome.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+
 import java.util.Map;
 
 @Data
-public class WeatherDataResponse {
+public class WeatherResponse {
     private double latitude;
     private double longitude;
     @JsonProperty("generationtime_ms")
@@ -19,4 +20,7 @@ public class WeatherDataResponse {
     @JsonProperty("current_units")
     private Map<String, String> currentUnits;
     private Map<String, Object> current;
+    @JsonProperty("daily_units")
+    private Map<String, String> dailyUnits;
+    private Map<String, Object> daily;
 }
