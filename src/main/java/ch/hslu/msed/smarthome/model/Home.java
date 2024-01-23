@@ -3,7 +3,6 @@ package ch.hslu.msed.smarthome.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -22,12 +21,8 @@ public class Home {
     private UUID id;
 
     @OneToOne(mappedBy = "home")
-    @NotNull
     @JsonBackReference
     private User user;
-
-    @NotNull
-    private HomeType type;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "home")
@@ -46,6 +41,17 @@ public class Home {
     public Home() {}
 
     public Home(User user) {
+        this.user = user;
+    }
+
+    public Home(double latitude, double longitude) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+    }
+
+    public Home(double latitude, double longitude, User user) {
+        this.latitude = latitude;
+        this.longitude = longitude;
         this.user = user;
     }
 }
