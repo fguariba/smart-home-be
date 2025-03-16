@@ -11,9 +11,9 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Slf4j
 public class WeatherService {
     private final WebClient weatherExtractorWebClient;
-    private final SmartHomeManagerService smartHomeManagerService;
+    private final SmartHomeManager smartHomeManagerService;
 
-    public WeatherService(WebClient weatherExtractorWebClient, SmartHomeManagerService smartHomeManagerService) {
+    public WeatherService(WebClient weatherExtractorWebClient, SmartHomeManager smartHomeManagerService) {
         this.weatherExtractorWebClient = weatherExtractorWebClient;
         this.smartHomeManagerService = smartHomeManagerService;
     }
@@ -25,12 +25,9 @@ public class WeatherService {
 
     public WeatherResponse getCurrentWeather(double latitude, double longitude) {
         log.info("get current weather...");
-        return  WebClient.builder().build()
+        return  weatherExtractorWebClient
                 .get()
                 .uri(uriBuilder -> uriBuilder
-                        .scheme("http")
-                        .host("localhost")
-                        .port("8081")
                         .path("weather-info/open-meteo")
                         .queryParam("latitude", latitude)
                         .queryParam("longitude", longitude)

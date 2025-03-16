@@ -1,6 +1,5 @@
 package ch.hslu.msed.smarthome.service;
 
-import ch.hslu.msed.smarthome.service.model.WeatherResponse;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
@@ -10,7 +9,7 @@ import java.time.format.DateTimeParseException;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-class SmartHomeManagerServiceTest {
+class SmartHomeManagerTest {
     @Test
     void convertISO8601ToDate_successfully() {
         // arrange
@@ -31,11 +30,5 @@ class SmartHomeManagerServiceTest {
 
         // act & assert
         assertThrows(DateTimeParseException.class, () -> LocalDateTime.parse(time, DateTimeFormatter.ISO_DATE_TIME));
-    }
-
-    @Test
-    void manageHomeDevices_successfully() {
-        final var weatherResponse = new WeatherResponse();
-
     }
 }

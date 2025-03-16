@@ -3,7 +3,7 @@ package ch.hslu.msed.smarthome.service;
 import ch.hslu.msed.smarthome.service.model.SmartHomeResponseData;
 import ch.hslu.msed.smarthome.service.model.WeatherResponse;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -12,9 +12,9 @@ import java.util.List;
 
 import static java.time.format.DateTimeFormatter.ISO_DATE_TIME;
 
-@Service
+@Component
 @Slf4j
-public class SmartHomeManagerService {
+public class SmartHomeManager {
 
     public SmartHomeResponseData manageHomeDevices(WeatherResponse weatherResponse) {
         final var current = weatherResponse.getCurrent();
